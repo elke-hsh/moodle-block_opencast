@@ -444,8 +444,8 @@ class ltimodulemanager {
 
         // Apply completion defaults.
         $module = $DB->get_record('modules', ['name' => 'opencast']);
-        $defaults = manager::get_default_completion($course, $module);
         if ($module) {
+            $defaults = manager::get_default_completion($course, $module);
             foreach ($defaults as $key => $value) {
                 $moduleinfo->$key = $value;
             }
